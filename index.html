@@ -1,1 +1,103 @@
-<!-- fill me in!-->
+<!-- 
+Jordan Stapinski (jstapins) 
+CMU 05-430 A3
+index.html
+
+The index (home) page for the Flip Stitch Pillow site
+
+Note: F.S. Pillow is Flip Stitch Pillow
+-->
+
+<!doctype HTML>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>
+    <!-- 
+    Background Image Rendering
+    Doing this before rendering Nav due to overlay issues
+     -->
+    <div class="bg-img">
+      <img src="src/splash_pillows.png">
+      <div class="centered">
+        <p class="center-text">Fall Into Comfort</p>
+      </div>
+      <div class="centered">
+        <a href="items.html">
+          <p class="under-text">Shop the Fall Collection</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 
+    Rendering the Nav bar
+    Logo - Search Bar - Menu Options
+     -->
+    <nav>
+      <div class="container">
+        <!-- Logo back to index.html -->
+        <a href="index.html">
+          <img src="src/logo.png" class="top-logo">
+        </a>
+        <!-- Non-functional search bar -->
+        <div class='search-bar'>
+          <input type="text" name="search" placeholder="What are you looking for? ">
+          <button onclick="alert('Sorry, search not added!');"><b>Go</b></button>
+        </div>
+        <!-- Links to other pages (only View All is functional) -->
+        <div class='nav-right'>
+          <ul>
+            <li><a href="items.html">View All</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a onclick="alert('Sorry, sign in not added!');">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <p class="callout-text"> Featured Items </p>
+      <!-- Cards for showing featured items -->
+      <a href="items_2.html">
+        <div class="card">
+          <img src="src/dog_couch.png">
+            <p class='item-text'><b>Dog Couch Pillow</b></p> 
+            <p class='price-text'>$19.99</p> 
+        </div>
+      </a>
+
+      <div class="card">
+        <img src="src/floor_round.png">
+          <p class='item-text'><b>Floor Round Pillow</b></p> 
+          <p class='price-text'>$9.99</p> 
+      </div>
+
+      <a href="items_1.html">
+        <div class="card">
+          <img src="src/bunny_bed.png">
+            <p class='item-text'><b>Bunny Bed Pillow</b></p> 
+            <p class='price-text'>$24.99</p> 
+        </div>
+      </a>
+
+      <div class="card">
+        <img src="src/round_bed.png">
+          <p class='item-text'><b>Round Bed Pillow</b></p> 
+          <p class='price-text'>$14.99</p> 
+      </div>
+
+    </div>
+  </body>
+
+  <!-- Basic footer -->
+  <footer>
+    <div class=left-text>(C) 2017</div>
+    <div class="centered">Pittsburgh, PA</div>
+    <div class="right-text">Flip Stitch Pillow, Inc.</span>
+  </footer>
+
+
+</html>

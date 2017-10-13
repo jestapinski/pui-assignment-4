@@ -1,0 +1,129 @@
+<!-- 
+Jordan Stapinski (jstapins) 
+CMU 05-430 A3
+items_1.html
+
+The product detail page for the Bunny Bed Pillow item
+-->
+
+<!doctype HTML>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>
+
+    <!-- 
+    Rendering the Nav bar
+    Logo - Search Bar - Menu Options
+     -->
+    <nav>
+      <div class="container">
+        <!-- Logo back to index.html -->
+        <a href="index.html">
+          <img src="src/logo.png" class="top-logo">
+        </a>
+        <!-- Non-functional search bar -->
+        <div class='search-bar'>
+          <input type="text" name="search" placeholder="What are you looking for? ">
+          <button onclick="alert('Sorry, search not added!');"><b>Go</b></button>
+        </div>
+        <!-- Links to other pages (only View All is functional) -->
+        <div class='nav-right'>
+          <ul>
+            <li><a href="items.html">View All</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a onclick="alert('Sorry, sign in not added!');">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Adding some top padding to move away from the Nav -->
+    <div class="top-nav-separator"></div>
+
+    <!-- Defining a more narrow container for product info -->
+    <div class="container-tight">
+      <!-- Adding the product detail name and rating -->
+      <p class="callout-text no-bottom"> Dog Couch Pillow </p>
+      <img src="src/four_stars.png" class="large-stars">
+      <p class="customize-text inline">(8)</p>
+      <br/>
+      <!-- Negative margin top to account for empty pixels in image -->
+      <div style="margin-top: -2%">
+        <img src="src/dog_couch.png" class='prod-img'>
+        <!-- prop class pushes detail text to the right -->
+        <span class="callout-text prop high-top">$19.99</span>
+        <br/>
+        <span class="customize-text prop lo-top">Customization (+$5):</span>
+        <br/>
+        <!-- Textarea to input customization options as per specs -->
+        <textarea placeholder="Add customization options:
+Engravings?
+Colors?"></textarea>
+        <br/>
+        <!-- Choosing quantity (note Chrome responive mode does not render
+          the dropdown formatting while Firefox does, this is a known bug) -->
+        <span class="customize-text quantity">Quantity: </span>
+        <select>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='3'>3</option>
+          <option value='4'>4</option>
+          <option value='5'>5</option>
+        </select>
+        <br/>
+        <button class="add-to-cart-button" onclick="alert('Purchase soon!')">Add to Cart</button>
+      </div>
+
+      <!-- Add padding to sit description and reviews under 
+        image and customization options -->
+      <div style="padding-top: 11%"></div>
+
+      <!-- Description and Reviews text -->
+      <span class="callout-text">Description:</span>
+      <span class="callout-text review-header">Reviews:</span>
+      <br/>
+
+      <!-- Description Text -->
+      <span class="description-text">
+        This leather pillow features a cute dog facing you! Nothing
+        comforts people like an old-fashioned dog. This leather is
+        100% machine washable too.
+        <br><br>
+        Features:
+        <br>
+        - Durable leather material
+        <br>
+        - A dog with its tongue out
+      </span>
+
+      <!-- right-review class pushes review text to the right
+        half of the page -->
+      <span class="review-name-text right-review">
+        Jane. D.
+        <img src="src/four_stars.png", class="small-stars">
+      </span>
+      <!-- Review Text -->
+      <span class="review-text right-review">
+        I missed my dog upon entering college, but this pillow made me happy! I spilled
+        some ramen on it but cleanup was a breeze with the leather material. I really
+        miss my actual dog :(
+        <br><br>
+        <a onclick="alert('No more reviews!')" class="more-reviews-text">More Reviews</a>
+      </span>
+
+    </div>
+  </body>
+
+  <!-- Basic footer -->
+  <footer>
+    <div class='left-text'>(C) 2017</div>
+    <div class="centered">Pittsburgh, PA</div>
+    <div class="right-text">Flip Stitch Pillow, Inc.</span>
+  </footer>
+
+
+</html>

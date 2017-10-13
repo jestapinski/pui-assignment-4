@@ -1,0 +1,542 @@
+/*
+Jordan Stapinski (jstapins)
+05-430 A3
+style.css
+
+Outlining style for elements in html pages
+*/
+
+/* Defining CSS Variables */
+:root {
+  --main-nav-color: #B19E8D;
+  --highlight-blue: #257ADD;
+  --text-color: black;
+  --ff: 'Avenir';
+  --nav-fs: 18pt;
+  --top-fs: 32pt;
+  --off-white: #EFECEA;
+  --nav-height-offset: 2.5%;
+  --dark-brown: #836852;
+  --sand-brown: #BC8F6C;
+}
+
+/* Define a calming background color for the site */
+body {
+  background-color: #D2C7BB;
+}
+
+/* Putting the Nav at absolutely (0,0) */
+nav {
+  position:absolute;
+  left:0%;
+  top:0%;
+  margin: 0px;
+  padding: 0;
+  width: 100%;
+  background-color: var(--main-nav-color)
+}
+
+/* Have the links in the nav bar to float to the right on the bar */
+.nav-right {
+  margin-top: var(--nav-height-offset);
+  float: right;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Displaying the search bar in the nav bar */
+.search-bar {
+  display: inline-block;
+  position:absolute;
+  width: 40%;
+  padding-left: var(--nav-height-offset);
+  padding-top:2%;
+}
+
+/* Changing the styling of the input text in the search bar */
+.search-bar input {
+  width: 80%;
+  padding: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-family: var(--ff);
+  font-style: italic;
+  border-radius: 8px;
+  text-align: right;
+  font-size: 14pt;
+}
+
+/* Styling the button on the search bar to be more consistent to UI */
+.search-bar button {
+  margin-left: 2%;
+  width: 10%;
+  padding: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 8px;
+  background-color: var(--dark-brown);
+  font-family: var(--ff);
+  font-size: 20px;
+}
+
+/* Changing the styling of the placeholder text in the search bar 
+  *Chrome only!* 
+*/
+::-webkit-input-placeholder {
+  font-size: 14pt;
+}
+
+li:before { 
+  /* Pipe-delimeted */
+  content: " | ";
+  color: var(--off-white);
+  font-family: var(--ff);
+  font-size: var(--nav-fs);
+  padding: 10px;
+} 
+
+li {
+    display: inline;
+}
+
+/* Changing default link style to be more stylish */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: var(--ff);
+  font-size: var(--nav-fs);
+}
+
+/* Positioning the background image on the index page */
+.bg-img {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 40%;
+}
+
+.bg-img img {
+  width: 100%;
+}
+
+/* Creating a container to stay away from margins */
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* Creating a right-leaning strict container */
+.container-tight {
+  margin-left: 20%;
+  margin-right: 0%;
+}
+
+/* Creating right inline elements in a container */
+.container-right {
+  margin-left: 0%;
+  margin-right: 0%;
+  display: inline-block;
+}
+
+/* Making the top links black and not underlined */
+.header-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Put some padding on the site logo on the top left */
+.top-logo {
+  width: 5%;
+  padding-top: 5px;
+}
+
+/* Push the background color and image all the way across the screen */
+body {
+  margin: 0;
+}
+
+/* Footer styling across the bottom of the screen */
+footer {
+  width:100%;
+  height:4%;
+  padding-top:20px;
+  padding-left: 5px;
+  padding-bottom: 20px;
+  border-top: 1px solid #000;
+  background-color: white;
+  font-family: var(--ff);
+  font-size:14px;
+  position:relative;
+}
+
+/* Add basic text formatting to the textarea element */
+textarea {
+  font-family: var(--ff);
+  font-size: 14pt;  
+}
+
+/* Styling center text on the index page "Fall into Comfort" */
+.center-text {
+  font-family: var(--ff);
+  font-size: var(--top-fs);
+  font-style: italic;
+  color: black;
+  padding-top: 0px;
+}
+
+/* Styling the Featured Items Text on the index page */
+.category-text {
+  font-family: var(--ff);
+  font-size: 24pt;
+  font-style: bold;
+  color: black;
+  margin-top: 0;
+}
+
+/* Styling the Featured Items Text on the index page */
+.sub-category-text {
+  font-family: var(--ff);
+  font-size: 18pt;
+  color: black;
+  margin-top: 0;
+}
+
+/* Styling the Featured Items Text on the index page */
+.callout-text {
+  font-family: var(--ff);
+  font-size: 24pt;
+  color: black;
+}
+
+/* Text formatting options for the customization options on the detail page */
+.customize-text {
+  font-family: var(--ff);
+  font-size: 18pt;
+  color: black;
+}
+
+/* Styling the "View the Fall Collection" text on the index page */
+.under-text {
+  font-family: var(--ff);
+  font-size: var(--nav-fs);
+  color: var(--highlight-blue);
+  padding-top: 80px;
+}
+
+/* Pushing over a quarter of the screen */
+.quarter {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+}
+
+/* Consistent hover effects for the elements on the browse page */
+.cat_option:hover {
+  background-color: gray;
+}
+
+/* 
+item_(1-6) refer to elements on the browse page in the cards,
+the layout is as follows:;
+________________________
+|       Title          |
+|  item_1      item_2  |
+|  item_3      item_4  |
+|  item_5      item_6  |
+------------------------
+*/
+
+.item_1 {
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    width: 50%;
+    display: inline;
+}
+
+.item_2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(0%, 0%);
+    width: 50%;
+    display: inline;
+}
+
+.item_3 {
+    position: absolute;
+    top: 60%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    width: 50%;
+    display: inline;
+}
+
+.item_4 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(0%, 0%);
+    width: 50%;
+    display: inline;
+}
+
+.item_5 {
+    position: absolute;
+    top: 80%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    width: 50%;
+    display: inline;
+}
+
+.item_6 {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(0%, 0%);
+    width: 50%;
+    display: inline;
+}
+
+/* Centered text in the footer */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+/* Left text in the footer */
+.left-text {
+    position: absolute;
+    top: 50%;
+    transform: translate(100% , 0%);
+}
+
+/* Right text in the footer */
+.right-text {
+    float: right;
+    padding-right: 50px;
+}
+
+/*  
+Card CSS code borrowed from
+https://www.w3schools.com/howto/howto_css_cards.asp
+*/
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    border-radius: 5px;
+    background-color: var(--off-white);
+    display: inline-block;
+    margin-left: 3.7%;
+    margin-bottom: 5%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card img {
+  width:100%;
+}
+
+.card-category {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    background-color: var(--off-white);
+    display: inline-block;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 5%;
+}
+
+.card-category:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* End borrowed code */
+
+/* Placing an image completely through the card */
+.card-category img {
+  width:100%;
+  opacity: 0.3;
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 40%;
+}
+
+/* Styling the item and price text within the cards */
+.item-text {
+  font-family: var(--ff);
+  font-size: 12pt;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+/* The name of the person in the product detail review */
+.review-name-text {
+  font-family: var(--ff);
+  font-size: 16pt;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+/* The price of an item displayed on the index screen */
+.price-text {
+  font-family: var(--ff);
+  font-size: 10pt;
+  text-align: center; 
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+/* Formatting for the link to more reviews on the detail page */
+.more-reviews-text {
+  font-family: var(--ff);
+  color: var(--highlight-blue);
+  font-size: 10pt;
+  text-align: left; 
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+/* The review body text on the product detail page */
+.review-text {
+  font-family: var(--ff);
+  font-size: 10pt;
+  text-align: left; 
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+/* The description item text on the detail page */
+.description-text {
+  font-family: var(--ff);
+  font-size: 10pt;
+  text-align: left; 
+  padding-bottom: 10px;
+  margin-top: 0;
+  width: 34%; 
+  display: inline-block; 
+  float: left;
+}
+
+/* Heading for the review text on the product detail page */
+.review-header {
+  margin-left: 28%; 
+  display: inline-block;
+}
+
+/* Defining size of the textarea on the product detail page */
+textarea {
+  width: 30%; 
+  margin-left: 6%; 
+  height: 80px;
+}
+
+/* Defining size of the customization properties on the product detail page */
+.prop {
+  margin-left: 6%;
+  display: inline-block;
+  width: 30%; 
+}
+
+/* Product image size and formatting, accounting for blank png pixels */
+.prod-img {
+  width: 45%;
+  margin-left: -6%;
+  float: left;
+}
+
+/* Erasing a bottom margin */
+.no-bottom {
+  margin-bottom: 0;
+}
+
+/* Pushing an object greatly from upper elements */
+.high-top {
+  margin-top: 10%;
+}
+
+/* Pushing an object minutely from upper elements */
+.lo-top {
+  margin-top: 1%;
+}
+
+/* Aligning elements in the center of a div */
+.center-align {
+  text-align: center;
+}
+
+/* Formatting options for the upper review stars on the product detail page */
+.large-stars {
+  width: 176px; 
+  height: 36px;
+}
+
+/* Formatting options for the lower review stars on the product detail page */
+.small-stars {
+  width: 83px;
+  height: 17px;
+}
+
+/* Displaying an object inline */
+.inline {
+  display: inline;
+}
+
+/* Formatting the "Add to Cart" button on the product detail page for UI consistency */
+.add-to-cart-button {
+  width: 15%; 
+  margin-left: 6%; 
+  margin-top: 2%;
+  font-family: var(--ff);
+  font-size: 14pt;
+  background-color: var(--sand-brown);
+  border-radius: 8px;
+}
+
+/* Formatting the "Quantity" text on the product detail page */
+.quantity {
+  width: 10%; 
+  margin-left: 6%; 
+  display: inline-block; 
+  margin-top: 2%;
+}
+
+/* Specifying the general width for buttons */
+button {
+  width: 5%;
+}
+
+/* Specifying formats for the select on the product detail page */
+select {
+  font-family: var(--ff);
+  font-size: 14pt;
+}
+
+/* Indenting review name and text */
+.right-review {
+  width: 34%;
+  display: inline-block;
+  margin-left: 15%;
+}
+
+/* General padding to separate content from the top nav */
+.top-nav-separator {
+  padding-top: 7%;
+}

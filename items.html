@@ -1,0 +1,188 @@
+<!-- 
+Jordan Stapinski (jstapins) 
+CMU 05-430 A3
+items.html
+
+The product browsing page showing all items the store has
+-->
+
+<!doctype HTML>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+
+    <!-- 
+    Rendering the Nav bar
+    Logo - Search Bar - Menu Options
+     -->
+    <nav>
+      <div class="container">
+        <!-- Logo back to index.html -->
+        <a href="index.html">
+          <img src="src/logo.png" class="top-logo">
+        </a>
+        <!-- Non-functional search bar -->
+        <div class='search-bar'>
+          <input type="text" name="search" placeholder="What are you looking for? ">
+          <button onclick="alert('Sorry, search not added!');"><b>Go</b></button>
+        </div>
+        <!-- Links to other pages (only View All is functional) -->
+        <div class='nav-right'>
+          <ul>
+            <li><a href="items.html">View All</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a onclick="alert('Sorry, sign in not added!');">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Adding some top padding to move away from the Nav -->
+    <div class="top-nav-separator"></div>
+
+    <!-- Move in from the outer window margins -->
+    <div class="container">
+      <p class="callout-text center-align"> View All </p>
+
+      <!-- Create the four cards to showcase the different items -->
+
+      <div class="center-align">
+
+        <!-- The 'Bed Pillows' card -->
+        <div class="card-category bg-img">
+          <img src="src/bed_pillows.jpg">
+          <div class="quarter">
+            <p class="category-text">Bed Pillows</p>
+          </div>
+          <a href="items_1.html"> 
+          <div class="item_1 cat_option">
+            <p class="sub-category-text">Square</p>
+          </div>
+          </a> 
+          <div class="item_2 cat_option">
+            <p class="sub-category-text">Cat</p>
+          </div>
+          <!-- Link to the Bunny Bed Pillow text -->
+          <a href="items_1.html"> 
+            <div class="item_3 cat_option">
+              <p class="sub-category-text">Bunny</p>
+            </div>
+          </a> 
+          <div class="item_4 cat_option">
+            <p class="sub-category-text">Dog</p>
+          </div>
+          <div class="item_5 cat_option">
+            <p class="sub-category-text">Round</p>
+          </div> 
+          <div class="item_6 cat_option">
+            <p class="sub-category-text">Custom</p>
+          </div>
+        </div>
+
+        <!-- The 'Couch Pillows' card -->
+        <div class="card-category bg-img">
+          <img src="src/couch_pillows.jpg">
+          <div class="quarter">
+            <p class="category-text">Couch Pillows</p>
+          </div>
+          <a href="items_1.html"> 
+            <div class="item_1 cat_option">
+              <p class="sub-category-text">Square</p>
+            </div>
+          </a>  
+          <div class="item_2 cat_option">
+            <p class="sub-category-text">Cat</p>
+          </div>
+          <div class="item_3 cat_option">
+            <p class="sub-category-text">Bunny</p>
+          </div>
+          <a href="items_2.html"> 
+            <div class="item_4 cat_option">
+              <p class="sub-category-text">Dog</p>
+            </div>
+          </a>
+          <div class="item_5 cat_option">
+            <p class="sub-category-text">Round</p>
+          </div> 
+          <div class="item_6 cat_option">
+            <p class="sub-category-text">Custom</p>
+          </div> 
+        </div>
+      </div>
+
+      <!-- Break to create a second row -->
+      <br/>
+
+      <div class="center-align">
+        <!-- The 'Floor Pouf Pillows' card -->
+        <div class="card-category bg-img">
+          <img src="src/floor_pouf_pillows.jpg">
+          <div class="quarter">
+            <p class="category-text">Floor Pouf Pillows</p>
+          </div> 
+          <a href="items_1.html"> 
+            <div class="item_1 cat_option">
+              <p class="sub-category-text">Square</p>
+            </div>
+          </a> 
+          <div class="item_2 cat_option">
+            <p class="sub-category-text">Cat</p>
+          </div>
+          <div class="item_3 cat_option">
+            <p class="sub-category-text">Bunny</p>
+          </div> 
+          <div class="item_4 cat_option">
+            <p class="sub-category-text">Dog</p>
+          </div>
+          <div class="item_5 cat_option">
+            <p class="sub-category-text">Round</p>
+          </div> 
+          <div class="item_6 cat_option">
+            <p class="sub-category-text">Custom</p>
+          </div>
+        </div>
+
+        <!-- The 'Round Pillows' card -->
+        <div class="card-category bg-img">
+          <img src="src/round_pillows.jpg">
+          <div class="quarter">
+            <p class="category-text">Round Pillows</p>
+          </div>
+          <a href="items_1.html"> 
+            <div class="item_1 cat_option">
+              <p class="sub-category-text">Square</p>
+            </div>
+          </a> 
+          <div class="item_2 cat_option">
+            <p class="sub-category-text">Cat</p>
+          </div>
+          <div class="item_3 cat_option">
+            <p class="sub-category-text">Bunny</p>
+          </div> 
+          <div class="item_4 cat_option">
+            <p class="sub-category-text">Dog</p>
+          </div>
+          <div class="item_5 cat_option">
+            <p class="sub-category-text">Round</p>
+          </div> 
+          <div class="item_6 cat_option">
+            <p class="sub-category-text">Custom</p>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- Consistent footer -->
+  <footer>
+    <div class=left-text>(C) 2017</div>
+    <div class="centered">Pittsburgh, PA</div>
+    <div class="right-text">Flip Stitch Pillow, Inc.</span>
+  </footer>
+
+
+</html>

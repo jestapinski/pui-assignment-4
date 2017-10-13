@@ -1,0 +1,89 @@
+<!-- 
+Jordan Stapinski (jstapins) 
+CMU 05-430 A3
+index.html
+
+The index (home) page for the Flip Stitch Pillow site
+
+Note: F.S. Pillow is Flip Stitch Pillow
+-->
+
+<!doctype HTML>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>
+
+    <!-- 
+    Rendering the Nav bar
+    Logo - Search Bar - Menu Options
+     -->
+    <nav>
+      <div class="container">
+        <!-- Logo back to index.html -->
+        <a href="index.html">
+          <img src="src/logo.png" class="top-logo">
+        </a>
+        <!-- Non-functional search bar -->
+        <div class='search-bar'>
+          <input type="text" name="search" placeholder="What are you looking for? ">
+          <button onclick="alert('Sorry, search not added!');"><b>Go</b></button>
+        </div>
+        <!-- Links to other pages (only View All is functional) -->
+        <div class='nav-right'>
+          <ul>
+            <li><a href="items.html">View All</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a onclick="alert('Sorry, sign in not added!');">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="top-nav-separator"></div>
+    <div class="container">
+      <p class="callout-text center-align">Pittsburgh Proud Pillows Since 1954</p>
+      <p class="customize-text">
+        At Flip Stitch Pillows, we believe in more than just a collection of
+        feathers. Our pillows are artisan handcrafted in our Pittsburgh-based factory
+        where we perform extra measures to ensure an unmatched quality is kept.
+      </p> 
+      <br/>
+      <p class="callout-text center-align">A Quality Unlike Any Other</p>
+      <p class="customize-text">
+        When we say our pillows are artisan-made, we don't mean that lightly. Our
+        comfort engineers are trained to ensure the stitching on each pillow is
+        crafted to perfection. Being in the business for over sixty years, we know
+        a good pillow when we see one. When you purchase a Flip Stitch Pillow, you
+        are investing in the future of your home, apartment, office, or wherever you
+        wish to decorate. You expect a pillow that makes a statement and will last for
+        years to come. Flip Stitch pillows exceed those standards.
+      </p>
+      <br/>
+      <p class="callout-text center-align">Our First Stitch</p>
+      <p class="customize-text">
+        Flip Stitch Pillows was founded in 1954 upon the idea that a pillow represents
+        so much more than just comfort: it represents family, safety, style. The Flip
+        family began creating pillows from their basement knowing the value pillows
+        meant to them. They sold pillows on street corners and bus stops, barely
+        scraping by after quitting jobs at the local steel mill. The Flips then
+        were able to expand, purchasing a factory near the Strip district of
+        Pittsburgh and have been distributing from there ever since.
+      </p>      
+    </div>
+
+
+  </body>
+
+  <!-- Basic footer -->
+  <footer>
+    <div class=left-text>(C) 2017</div>
+    <div class="centered">Pittsburgh, PA</div>
+    <div class="right-text">Flip Stitch Pillow, Inc.</span>
+  </footer>
+
+
+</html>
