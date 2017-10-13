@@ -235,6 +235,16 @@ textarea {
     width: 100%;
 }
 
+/* Pushing over a quarter of the screen */
+.half {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+}
+
+
 /* Consistent hover effects for the elements on the browse page */
 .cat_option:hover {
   background-color: gray;
@@ -539,4 +549,20 @@ select {
 /* General padding to separate content from the top nav */
 .top-nav-separator {
   padding-top: 7%;
+}
+
+.selection-img {
+  margin-left: 6%;
+  display: inline-block;
+  border-style: solid;
+  border-color: black;
+  width: 6%;
+}
+
+.selection-img-tight {
+  margin-left: 2%;
+  display: inline-block;
+  border-style: solid;
+  border-color: black;
+  width: 6%;
 }
