@@ -566,3 +566,11 @@ select {
   border-color: black;
   width: 6%;
 }
+
+.nav-cart {
+  width: 2.5%;
+  display: inline-block;
+  float: right;
+  margin-top: var(--nav-height-offset);
+  padding-left: 15px;
+}
