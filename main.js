@@ -13,8 +13,11 @@ let selected_product;
 // Static class of cart functions
 class Cart {
 	// Add to Cart
-	static add_to_cart(item, quantity){
+	static add_to_cart(){
 		this.load_cart();
+		let select_quantity = document.getElementById('quantity');
+		let quantity = parseInt(select_quantity.value);
+		let item = selected_product;
 		// Add this to the cart if it is not present
 		if (cart[item.name] === undefined){
 			item['quantity'] = quantity;
@@ -53,16 +56,26 @@ class Cart {
 		}
 		this.save_cart();
 	}
+	static sum_cart_items(){
+		let total_items = 0;
+		for (var item in cart){
+			total_items += cart[item].quantity;
+		}
+    let num_in_cart = document.getElementById('cart_size');
+    num_in_cart.innerHTML = total_items;
+	}
 	// Load cart
 	static load_cart(){
 		cart = JSON.parse(localStorage.getItem("cart"));
 		if (cart === null){
 			cart = {};
 		}
+    Cart.sum_cart_items();
 	}
 	// Save cart
 	static save_cart(){
 		localStorage.setItem('cart', JSON.stringify(cart));
+    Cart.sum_cart_items();
 	}
 }
 
@@ -74,6 +87,22 @@ class Product {
 		this.unit_price = unit_price;
 		this.quantity = 0;
 		this.image_link = image_link;
+	}
+	static selectedProductChange(item_num){
+		selected_product = products_list[item_num];
+		let item_text = document.getElementById("item_text");
+		let price_text = document.getElementById("price_text");
+		let selected_img = document.getElementById("selected_img");
+		console.log(item_text);
+		item_text.innerHTML = products_list[item_num].name;
+		price_text.innerHTML = "$".concat(products_list[item_num].unit_price.toString());
+		selected_img.setAttribute("src", selected_product.image_link);
+	}
+	static set_product(product_id){
+		if (products_list === undefined){
+			this.initialize_products();
+		}
+		selected_product = products_list[product_id];
 	}
 	static initialize_products(){
 		// Names

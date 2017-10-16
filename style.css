@@ -574,3 +574,9 @@ select {
   margin-top: var(--nav-height-offset);
   padding-left: 15px;
 }
+
+#cart_size {
+  font-family: var(--ff);
+  font-size: 14pt;
+
+}

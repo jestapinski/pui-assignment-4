@@ -9,6 +9,8 @@ The product browsing page showing all items the store has
 <!doctype HTML>
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
@@ -37,6 +39,7 @@ The product browsing page showing all items the store has
             <li><a href="about.html">About</a></li>
             <li><a href="">Contact</a></li>
             <li><a onclick="alert('Sorry, sign in not added!');">Sign In</a></li>
+            <li><span id='cart_size'>0</span></li>
           </ul>
         </div>
       </div>
@@ -164,5 +167,7 @@ The product browsing page showing all items the store has
     <div class="right-text">Flip Stitch Pillow, Inc.</span>
   </footer>
 
-
+    <script type="text/javascript">
+        Cart.load_cart();
+    </script>
 </html>
