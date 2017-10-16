@@ -7,6 +7,8 @@ Javascript logic for shopping cart feature
 */
 
 let cart;
+let products_list;
+let selected_product;
 
 // Static class of cart functions
 class Cart {
@@ -81,10 +83,18 @@ class Product {
 		categories = categories.map(function(x){return x.concat(' Pillow');});
 		let sub_categories = ['Square', 'Cat', 'Bunny', 'Dog', 'Round', 'Custom'];
 		let all_categories = sub_categories.map(function(x){
-			return categories.map(function(y){x.concat(' ', y)})
+			return categories.map(function(y){return x.concat(' ', y);})
 		});
-		console.log(all_categories);
-	}
+		all_categories = [].concat.apply([], all_categories);
+		let filepath_names = all_categories.map(function(x){return x.split(' ').join('');});
+		filepath_names = filepath_names.map(function(x){return 'src/'.concat(x, '.png')})
+		let price_array = [14.99, 19.99, 24.99];
+		products_list = [];
+		for (var i = 0; i < all_categories.length; i++){
+			products_list.push(new Product(all_categories[i], price_array[i % price_array.length], filepath_names[i]));
+		}
+		console.log(products_list);
+	}	
 }
 
 $(document).ready(function(){
