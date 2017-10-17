@@ -64,6 +64,14 @@ class Cart {
     let num_in_cart = document.getElementById('cart_size');
     num_in_cart.innerHTML = total_items;
 	}
+  static render_cart_items(){
+    let cart_list_div = $('#shopping_cart_items')[0];
+    for (var item in cart){
+      // Add templating here
+      let a = $('<p class="customize-text">'.concat(cart[item]['name'], cart[item]['quantity'], '</p>'))[0];
+      cart_list_div.append(a);
+    }
+  }
 	// Load cart
 	static load_cart(){
 		cart = JSON.parse(localStorage.getItem("cart"));
