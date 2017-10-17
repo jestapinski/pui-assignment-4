@@ -11,9 +11,6 @@ The product detail page for the Bunny Bed Pillow item
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
-    <script type="text/javascript">
-      Product.set_product(0);
-    </script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   
@@ -59,21 +56,21 @@ The product detail page for the Bunny Bed Pillow item
       <p class="customize-text inline">(24)</p>
       <br/>
       <!-- Negative margin top to account for empty pixels in image -->
-      <div style="margin-top: -7%">
-        <img src="src/bunny_bed.png" class='prod-img' id='selected_img'>
+      <div style="margin-top: 0%">
+        <img src="src/BunnyBedPillow.png" class='prod-img' id='selected_img'>
         <!-- prop class pushes detail text to the right -->
-        <span class="callout-text prop high-top" id="price_text">$24.99</span>
+        <span class="callout-text prop lo-top" id="price_text">$24.99</span>
         <br/>
         <span class="customize-text prop lo-top">Choose Pillow Type:</span>
         <br/>
         <!-- 0, 4, 8, 12, 16, 20 -->
-        <img src="src/bunny_bed.png" class="selection-img" style="display: inline-block;" onclick="Product.selectedProductChange(0);">
-        <img src="src/bunny_bed.png" class="selection-img-tight" style="display: inline-block;" onclick="Product.selectedProductChange(4);">
-        <img src="src/bunny_bed.png" class="selection-img-tight" style="display: inline-block;" onclick="Product.selectedProductChange(8);">
+        <img src="src/SquareBedPillow.png" class="selection-img" style="display: inline-block;" onclick="Product.selectedProductChange(0);">
+        <img src="src/CatBedPillow.png" class="selection-img-tight" style="display: inline-block;" onclick="Product.selectedProductChange(4);">
+        <img src="src/BunnyBedPillow.png" class="selection-img-tight" style="display: inline-block;" onclick="Product.selectedProductChange(8);">
         <br/>
-        <img src="src/bunny_bed.png" class="selection-img" style="display: inline-block;" onclick="Product.selectedProductChange(12);">
-        <img src="src/bunny_bed.png" class="selection-img-tight" style="display: inline-block;" onclick="Product.selectedProductChange(16);">
-        <img src="src/bunny_bed.png" class="selection-img-tight" style="display: inline-block;" onclick="Product.selectedProductChange(20);">
+        <img src="src/DogBedPillow.png" class="selection-img" style="display: inline-block;" onclick="Product.selectedProductChange(12);">
+        <img src="src/RoundBedPillow.png" class="selection-img-tight" style="display: inline-block;" onclick="Product.selectedProductChange(16);">
+        <img src="src/CustomBedPillow.png" class="selection-img-tight" style="display: inline-block;" onclick="Product.selectedProductChange(20);">
         <span class="customize-text prop lo-top">Customization (+$5):</span>
         <br/>
         <!-- Textarea to input customization options as per specs -->
@@ -142,5 +139,9 @@ Colors?"></textarea>
     <div class="right-text">Flip Stitch Pillow, Inc.</span>
   </footer>
 
+    <script type="text/javascript">
+      Product.initialize_products();
+      Product.selectedProductChange(0);
+    </script>
 
 </html>
