@@ -555,17 +555,25 @@ select {
 .selection-img {
   margin-left: 6%;
   display: inline-block;
-  border-style: solid;
-  border-color: black;
+  border-style: dashed;
+  border-color: grey;
   width: 6%;
+}
+
+.selection-img:hover {
+  background-color: grey;
 }
 
 .selection-img-tight {
   margin-left: 2%;
   display: inline-block;
-  border-style: solid;
-  border-color: black;
+  border-style: dashed;
+  border-color: grey;
   width: 6%;
+}
+
+.selection-img-tight:hover {
+  background-color: grey;
 }
 
 .nav-cart {
@@ -579,5 +587,16 @@ select {
 #cart_size {
   font-family: var(--ff);
   font-size: 14pt;
+}
 
+.large-padding {
+  padding-top: 11%;
+}
+
+.mid-padding {
+  padding-top: 5%;
+}
+
+.negative-padding {
+  margin-top: -2%;
 }

@@ -7,103 +7,155 @@ The index (home) page for the Flip Stitch Pillow site
 
 Note: F.S. Pillow is Flip Stitch Pillow
 -->
-
-<!doctype HTML>
+<!DOCTYPE html>
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="main.js" type="text/javascript">
+    </script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+    $(document).ready(function(){
+        Cart.load_cart();
+      });
+    </script>
+    <title>
+    </title>
   </head>
-  
   <body>
     <!-- 
     Background Image Rendering
     Doing this before rendering Nav due to overlay issues
      -->
+
     <div class="bg-img">
       <img src="src/splash_pillows.png">
       <div class="centered">
-        <p class="center-text">Fall Into Comfort</p>
+        <p class="center-text">
+          Fall Into Comfort
+        </p>
       </div>
+
       <div class="centered">
-        <a href="items.html">
-          <p class="under-text">Shop the Fall Collection</p>
-        </a>
+        <a href="items.html"></a>
+        <p class="under-text">
+          Shop the Fall Collection
+        </p>
       </div>
     </div>
-
     <!-- 
     Rendering the Nav bar
     Logo - Search Bar - Menu Options
      -->
+
     <nav>
       <div class="container">
         <!-- Logo back to index.html -->
-        <a href="index.html">
-          <img src="src/logo.png" class="top-logo">
-        </a>
+        <a href="index.html"><img class="top-logo" src="src/logo.png"></a> 
         <!-- Non-functional search bar -->
+
         <div class='search-bar'>
-          <input type="text" name="search" placeholder="What are you looking for? ">
-          <button onclick="alert('Sorry, search not added!');"><b>Go</b></button>
+          <input name="search" placeholder="What are you looking for?" type=
+          "text"> <button onclick=
+          "alert('Sorry, search not added!');"><b>Go</b></button>
         </div>
         <!-- Links to other pages (only View All is functional) -->
-        <a href="shopping_cart.html"><img src="src/cart.png" class="nav-cart"></a>
+        <a href="shopping_cart.html"><img class="nav-cart" src=
+        "src/cart.png"></a>
         <div class='nav-right'>
           <ul>
-            <li><a href="items.html">View All</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a onclick="alert('Sorry, sign in not added!');">Sign In</a></li>
-            <li><span id='cart_size'>0</span></li>
+            <li>
+              <a href="items.html">View All</a>
+            </li>
+
+            <li>
+              <a href="about.html">About</a>
+            </li>
+
+            <li>
+              <a href="">Contact</a>
+            </li>
+
+            <li>
+              <a onclick="alert('Sorry, sign in not added!');">Sign In</a>
+            </li>
+
+            <li>
+              <span id='cart_size'>0</span>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
     <div class="container">
-      <p class="callout-text"> Featured Items </p>
+      <p class="callout-text">
+        Featured Items
+      </p>
       <!-- Cards for showing featured items -->
-      <a href="items_2.html">
-        <div class="card">
-          <img src="src/DogCouchPillow.png">
-            <p class='item-text'><b>Dog Couch Pillow</b></p> 
-            <p class='price-text'>$19.99</p> 
-        </div>
-      </a>
+      <a href="items_2.html"></a>
+      <div class="card">
+        <img src="src/DogCouchPillow.png">
+        <p class='item-text'>
+          <b>Dog Couch Pillow</b>
+        </p>
+
+        <p class='price-text'>
+          $19.99
+        </p>
+      </div>
 
       <div class="card">
         <img src="src/RoundFloorPillow.png">
-          <p class='item-text'><b>Floor Round Pillow</b></p> 
-          <p class='price-text'>$9.99</p> 
-      </div>
+        <p class='item-text'>
+          <b>Floor Round Pillow</b>
+        </p>
 
+        <p class='price-text'>
+          $9.99
+        </p>
+      </div>
+      
       <a href="items_1.html">
         <div class="card">
           <img src="src/SquareBedPillow.png">
-            <p class='item-text'><b>Square Bed Pillow</b></p> 
-            <p class='price-text'>$24.99</p> 
+          <p class='item-text'>
+            <b>Square Bed Pillow</b>
+          </p>
+
+          <p class='price-text'>
+            $24.99
+          </p>
         </div>
       </a>
 
       <div class="card">
         <img src="src/RoundBedPillow.png">
-          <p class='item-text'><b>Round Bed Pillow</b></p> 
-          <p class='price-text'>$14.99</p> 
+        <p class='item-text'>
+          <b>Round Bed Pillow</b>
+        </p>
+
+        <p class='price-text'>
+          $14.99
+        </p>
+      </div>
+    </div>
+    <!-- Basic footer -->
+
+    <footer>
+      <div class="left-text">
+        (C) 2017
       </div>
 
-    </div>
+      <div class="centered">
+        Pittsburgh, PA
+      </div>
+
+      <div class="right-text">
+        Flip Stitch Pillow, Inc.
+      </div>
+    </footer>
   </body>
-
-  <!-- Basic footer -->
-  <footer>
-    <div class=left-text>(C) 2017</div>
-    <div class="centered">Pittsburgh, PA</div>
-    <div class="right-text">Flip Stitch Pillow, Inc.</span>
-  </footer>
-
-    <script type="text/javascript">
-        Cart.load_cart();
-    </script>
 </html>

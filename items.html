@@ -12,6 +12,11 @@ The product browsing page showing all items the store has
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+      $(document).ready(function(){
+        Cart.load_cart();
+      })
+    </script>
   </head>
 
   <body>
@@ -68,32 +73,12 @@ The product browsing page showing all items the store has
 
         <!-- The 'Couch Pillows' card -->
         <div class="card-category bg-img">
-          <img src="src/couch_pillows.jpg">
-          <div class="quarter">
-            <p class="category-text">Couch Pillows</p>
-          </div>
-          <a href="items_1.html"> 
-            <div class="item_1 cat_option">
-              <p class="sub-category-text">Square</p>
-            </div>
-          </a>  
-          <div class="item_2 cat_option">
-            <p class="sub-category-text">Cat</p>
-          </div>
-          <div class="item_3 cat_option">
-            <p class="sub-category-text">Bunny</p>
-          </div>
           <a href="items_2.html"> 
-            <div class="item_4 cat_option">
-              <p class="sub-category-text">Dog</p>
+            <img src="src/couch_pillows.jpg">
+            <div class="half">
+              <p class="category-text">Couch Pillows</p>
             </div>
           </a>
-          <div class="item_5 cat_option">
-            <p class="sub-category-text">Round</p>
-          </div> 
-          <div class="item_6 cat_option">
-            <p class="sub-category-text">Custom</p>
-          </div> 
         </div>
       </div>
 
@@ -104,59 +89,20 @@ The product browsing page showing all items the store has
         <!-- The 'Floor Pouf Pillows' card -->
         <div class="card-category bg-img">
           <img src="src/floor_pouf_pillows.jpg">
-          <div class="quarter">
+          <div class="half">
             <p class="category-text">Floor Pouf Pillows</p>
           </div> 
-          <a href="items_1.html"> 
-            <div class="item_1 cat_option">
-              <p class="sub-category-text">Square</p>
-            </div>
-          </a> 
-          <div class="item_2 cat_option">
-            <p class="sub-category-text">Cat</p>
-          </div>
-          <div class="item_3 cat_option">
-            <p class="sub-category-text">Bunny</p>
-          </div> 
-          <div class="item_4 cat_option">
-            <p class="sub-category-text">Dog</p>
-          </div>
-          <div class="item_5 cat_option">
-            <p class="sub-category-text">Round</p>
-          </div> 
-          <div class="item_6 cat_option">
-            <p class="sub-category-text">Custom</p>
-          </div>
         </div>
 
         <!-- The 'Round Pillows' card -->
         <div class="card-category bg-img">
           <img src="src/round_pillows.jpg">
-          <div class="quarter">
+          <div class="half">
             <p class="category-text">Round Pillows</p>
           </div>
-          <a href="items_1.html"> 
-            <div class="item_1 cat_option">
-              <p class="sub-category-text">Square</p>
-            </div>
-          </a> 
-          <div class="item_2 cat_option">
-            <p class="sub-category-text">Cat</p>
-          </div>
-          <div class="item_3 cat_option">
-            <p class="sub-category-text">Bunny</p>
-          </div> 
-          <div class="item_4 cat_option">
-            <p class="sub-category-text">Dog</p>
-          </div>
-          <div class="item_5 cat_option">
-            <p class="sub-category-text">Round</p>
-          </div> 
-          <div class="item_6 cat_option">
-            <p class="sub-category-text">Custom</p>
-          </div> 
         </div>
       </div>
+
     </div>
   </body>
 
@@ -166,8 +112,4 @@ The product browsing page showing all items the store has
     <div class="centered">Pittsburgh, PA</div>
     <div class="right-text">Flip Stitch Pillow, Inc.</span>
   </footer>
-
-    <script type="text/javascript">
-        Cart.load_cart();
-    </script>
 </html>

@@ -9,9 +9,15 @@ The shopping cart page for viewing products
 <html>
 <head>
 	<title>FS Pillow Shopping Cart</title>
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+    $(document).ready(function(){
+        Cart.load_cart();
+        Cart.render_cart_items();
+    });
+    </script>
 </head>
 <body>
 
@@ -61,9 +67,4 @@ The shopping cart page for viewing products
     <div class="centered">Pittsburgh, PA</div>
     <div class="right-text">Flip Stitch Pillow, Inc.</span>
   </footer>
-
-    <script type="text/javascript">
-        Cart.load_cart();
-        Cart.render_cart_items();
-    </script>
 </html>
