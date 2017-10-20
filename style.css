@@ -600,3 +600,17 @@ select {
 .negative-padding {
   margin-top: -2%;
 }
+
+.cart-img {
+  width: 7%;
+  float: left;
+  margin-right: 3%;
+  border-style: solid;
+  border-color: grey;
+}
+
+hr {
+  width: 75%;
+  float: left;
+  border-color: black;
+}

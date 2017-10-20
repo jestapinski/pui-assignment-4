@@ -31,9 +31,14 @@ class Cart {
 	// Bulk Remove
 	static bulk_remove_item(item){
 		this.load_cart();
-		delete cart[item.name];
+		delete cart[item];
 		this.save_cart();
+    this.render_cart_items();
 	}
+  static remove_parent_item(item){
+    let item_to_delete = item.parentNode.id;
+    Cart.bulk_remove_item(item_to_delete);
+  }
 	// Increase Quantity
 	static increase_quantity(item, num_up){
 		let quantity;
@@ -65,12 +70,15 @@ class Cart {
     num_in_cart.innerHTML = total_items;
 	}
   static render_cart_items(){
+    $("#shopping_cart_items").html("");
     let cart_list_div = $('#shopping_cart_items')[0];
     for (var item in cart){
       // Add templating here
-      let a = $('<p class="customize-text">'.concat(cart[item]['name'], cart[item]['quantity'], '</p>'))[0];
-      cart_list_div.append(a);
+      let new_item = $(Product.product_cart_template(item))[0];
+      cart_list_div.append(new_item);
     }
+    let button = $("<button class='checkout-button' onclick='alert(`Not yet!`)'>Checkout</button>")[0];
+    cart_list_div.append(button);
   }
 	// Load cart
 	static load_cart(){
@@ -101,7 +109,6 @@ class Product {
 		let item_text = document.getElementById("item_text");
 		let price_text = document.getElementById("price_text");
 		let selected_img = document.getElementById("selected_img");
-		console.log(item_text);
 		item_text.innerHTML = products_list[item_num].name;
 		price_text.innerHTML = "$".concat(products_list[item_num].unit_price.toString());
 		selected_img.setAttribute("src", selected_product.image_link);
@@ -112,6 +119,20 @@ class Product {
 		}
 		selected_product = products_list[product_id];
 	}
+  static product_cart_template(item){
+    let template = `
+    <div class='cart_item' id='{3}'>
+      <img src='{2}' class='cart-img'/>
+      <p class='customize-text'>{0}</p>
+      <p class='quantity-text'>Quantity: {1}</p>
+      <button class='remove-item' onclick='Cart.remove_parent_item(this);'>Remove</button>
+      <br>
+      <hr>
+    </div>
+    `
+    template = template.replace('{0}', cart[item]['name']).replace('{1}', cart[item]['quantity']);
+    return template.replace('{2}', cart[item]['image_link']).replace('{3}', item);
+  }
 	static initialize_products(){
 		// Names
 		// Prices
@@ -130,7 +151,6 @@ class Product {
 		for (var i = 0; i < all_categories.length; i++){
 			products_list.push(new Product(all_categories[i], price_array[i % price_array.length], filepath_names[i]));
 		}
-		console.log(products_list);
 	}	
 }
 
