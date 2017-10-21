@@ -9,17 +9,12 @@ The product detail page for the Bunny Bed Pillow item
 <html>
   <head>
 
-    <script src=
-    "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
     <script src="main.js" type="text/javascript">
     </script>
     <link href="style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript">
-    $(document).ready(function(){
-      Product.initializeProducts();
-      Product.selectedProductChange(0);
-    });
+    <script type="text/javascript" src="items_render.js">
     </script>
     <title>
     </title>
@@ -33,17 +28,25 @@ The product detail page for the Bunny Bed Pillow item
     <nav>
       <div class="container">
         <!-- Logo back to index.html -->
-         <a href="index.html"><img class="top-logo" src="src/logo.png"></a> 
+        <a href="index.html"><img class="top-logo" src="src/logo.png"></a> 
         <!-- Non-functional search bar -->
-
         <div class='search-bar'>
-          <input name="search" placeholder="What are you looking for?" type=
-          "text"> <button onclick=
-          "alert('Sorry, search not added!');"><b>Go</b></button>
+          <input 
+            name="search" 
+            placeholder="What are you looking for?" 
+            type="text"> 
+          <button 
+            onclick="alert('Sorry, search not added!');">
+              <b>Go</b>
+          </button>
         </div>
         <!-- Links to other pages (only View All is functional) -->
-        <a href="shopping_cart.html"><img class="nav-cart" src=
-        "src/cart.png"></a>
+        <a href="shopping_cart.html">
+          <img 
+            class="nav-cart" 
+            src="src/cart.png">
+        </a>
+
         <div class='nav-right'>
           <ul>
             <li>
@@ -63,21 +66,22 @@ The product detail page for the Bunny Bed Pillow item
             </li>
 
             <li>
+              <!-- Size of the cart auto-updated when the cart is loaded -->
               <span id='cart_size'>0</span>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- Adding some top padding to move away from the Nav -->
 
+    <!-- Adding some top padding to move away from the Nav -->
     <div class="top-nav-separator">
     </div>
+
     <!-- Defining a more narrow container for product info -->
-
     <div class="container-tight">
-      <!-- Adding the product detail name and rating -->
 
+      <!-- Adding the product detail name and rating -->
       <p class="callout-text no-bottom" id="item_text">
         Square Bed Pillow
       </p>
@@ -87,103 +91,130 @@ The product detail page for the Bunny Bed Pillow item
       </p>
       <br>
       <!-- Negative margin top to account for empty pixels in image -->
+      <img class='prod-img' id='selected_img' src="src/SquareBedPillow.png"> 
+      <!-- prop class pushes detail text to the right -->
+      <span class="callout-text prop lo-top" id="price_text">
+        $24.99
+      </span>
+      <br>
+      <span class="customize-text prop lo-top">
+        Choose Pillow Type:
+      </span>
+      <br>
 
-        <img class='prod-img' id='selected_img' src="src/SquareBedPillow.png"> 
-        <!-- prop class pushes detail text to the right -->
-         <span class="callout-text prop lo-top" id=
-        "price_text">$24.99</span><br>
-        <span class="customize-text prop lo-top">Choose Pillow Type:</span><br>
+      <!-- 
+      Bed pillows are Products with ids
+      0, 4, 8, 12, 16, 20 
+      -->
+      <img 
+      class="selection-img" 
+      onclick="Product.selectedProductChange(0);"
+      src="src/SquareBedPillow.png">
 
-        <!-- 0, 4, 8, 12, 16, 20 -->
-        <img 
-        class="selection-img" 
-        onclick="Product.selectedProductChange(0);"
-        src="src/SquareBedPillow.png">
+      <img 
+      class="selection-img-tight" 
+      onclick="Product.selectedProductChange(4);" 
+      src="src/CatBedPillow.png"> 
 
-        <img 
-        class="selection-img-tight" 
-        onclick="Product.selectedProductChange(4);" 
-        src="src/CatBedPillow.png"> 
+      <img 
+      class="selection-img-tight" 
+      onclick="Product.selectedProductChange(8);" 
+      src="src/BunnyBedPillow.png">
 
-        <img 
-        class="selection-img-tight" 
-        onclick="Product.selectedProductChange(8);" 
-        src="src/BunnyBedPillow.png">
+      <br>
+      
+      <img 
+      class="selection-img" 
+      onclick="Product.selectedProductChange(12);"
+      src="src/DogBedPillow.png"> 
 
-        <br>
-        
-        <img 
-        class="selection-img" 
-        onclick="Product.selectedProductChange(12);"
-        src="src/DogBedPillow.png"> 
+      <img 
+      class="selection-img-tight" 
+      onclick="Product.selectedProductChange(16);" 
+      src="src/RoundBedPillow.png"> 
 
-        <img 
-        class="selection-img-tight" 
-        onclick="Product.selectedProductChange(16);" 
-        src="src/RoundBedPillow.png"> 
+      <img 
+      class="selection-img-tight" 
+      onclick="Product.selectedProductChange(20);" 
+      src="src/CustomBedPillow.png"> 
 
-        <img 
-        class="selection-img-tight" 
-        onclick="Product.selectedProductChange(20);" 
-        src="src/CustomBedPillow.png"> 
+      <span class="customize-text prop lo-top">
+        Customization (+$5):
+      </span>
+      <br>
 
-        <span class="customize-text prop lo-top">Customization (+$5):</span><br>
-        <!-- Textarea to input customization options as per specs -->
-         
+      <!-- Textarea to input customization options as per specs -->
+      <textarea placeholder="Add customization options: Engravings? Colors?"></textarea>
 
-        <textarea placeholder="Add customization options: Engravings? Colors?"></textarea><br>
-        <!-- Choosing quantity (note Chrome responive mode does not render
-          the dropdown formatting while Firefox does, this is a known bug) -->
-         <span class="customize-text quantity">Quantity:</span> <select id=
-        "quantity">
-          <option value='1'>
-            1
-          </option>
-          <option value='2'>
-            2
-          </option>
-          <option value='3'>
-            3
-          </option>
-          <option value='4'>
-            4
-          </option>
-          <option value='5'>
-            5
-          </option>
-        </select>
-        <button class="add-to-cart-button" onclick="Cart.addToCart()">
-          Add to Cart
-        </button>
-      <!-- Add padding to sit description and reviews under 
-        image and customization options -->
+      <br>
+      <!-- Choosing quantity (note Chrome responive mode does not render
+        the dropdown formatting while Firefox does, this is a known bug) -->
+      <span class="customize-text quantity">
+        Quantity:
+      </span> 
+      <select id="quantity">
+        <option value='1'>
+          1
+        </option>
+        <option value='2'>
+          2
+        </option>
+        <option value='3'>
+          3
+        </option>
+        <option value='4'>
+          4
+        </option>
+        <option value='5'>
+          5
+        </option>
+      </select>
+      <button class="add-to-cart-button" onclick="Cart.addToCart()">
+        Add to Cart
+      </button>
 
+    <!-- Add padding to sit description and reviews under 
+      image and customization options -->
       <div class="mid-padding">
       </div>
       <!-- Description and Reviews text -->
-      <span class="callout-text">Description:</span> 
-      <span class="callout-text review-header">Reviews:</span>
+      <span class="callout-text">
+        Description:
+      </span> 
+      <span class="callout-text review-header">
+        Reviews:
+      </span>
       <br>
       <!-- Description Text -->
-       <span class="description-text">This polyester pillow sports a wonderful
-      bunny on the front. Did you know that the bunny is a cute animal that
-      everyone loves? Neither did I. The pillow is comfortable too.<br>
-      <br>
-      Features:<br>
-      - Comfortable 100% polyester material<br>
-      - A bunny</span> <!-- right-review class pushes review text to the right
+      <span class="description-text">
+        This polyester pillow sports a wonderful
+        bunny on the front. Did you know that the bunny is a cute animal that
+        everyone loves? Neither did I. The pillow is comfortable too.<br>
+        <br>
+        Features:
+        <br>
+        - Comfortable 100% polyester material
+        <br>
+        - A bunny
+      </span> 
+
+      <!-- right-review class pushes review text to the right
         half of the page -->
       <span class="review-name-text right-review">John. D. 
         <img class="small-stars" src="src/four_stars.png">
-      </span> <!-- Review Text -->
-      <span class="review-text right-review">This pillow is a great pillow, in
-      fact it is one of the best pillows I have ever used. Who knew that a
-      pillow with a bunny on it would be so comfortable? Not me! The only
-      complaint I have is that the bunny is small and I wish it was larger and
-      took up more of the pillow. Overall good buy!<br>
-      <br>
-      <a class="more-reviews-text" onclick="alert('No more reviews!')">More
-      Reviews</a></span>
+      </span> 
+      <!-- Review Text -->
+      <span class="review-text right-review">
+        This pillow is a great pillow, in
+        fact it is one of the best pillows I have ever used. Who knew that a
+        pillow with a bunny on it would be so comfortable? Not me! The only
+        complaint I have is that the bunny is small and I wish it was larger and
+        took up more of the pillow. Overall good buy!<br>
+        <br>
+        <a class="more-reviews-text" onclick="alert('No more reviews!')">
+          More Reviews
+        </a>
+      </span>
     </div>
     <!-- Basic footer -->
 

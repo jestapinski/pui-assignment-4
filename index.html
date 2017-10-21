@@ -16,12 +16,8 @@ Note: F.S. Pillow is Flip Stitch Pillow
     <script src="main.js" type="text/javascript">
     </script>
     <link href="style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript">
-    $(document).ready(function(){
-        Cart.loadCart();
-      });
-    </script>
     <title>
+      Flip Stitch Pillow Inc.
     </title>
   </head>
   <body>
@@ -55,15 +51,23 @@ Note: F.S. Pillow is Flip Stitch Pillow
         <!-- Logo back to index.html -->
         <a href="index.html"><img class="top-logo" src="src/logo.png"></a> 
         <!-- Non-functional search bar -->
-
         <div class='search-bar'>
-          <input name="search" placeholder="What are you looking for?" type=
-          "text"> <button onclick=
-          "alert('Sorry, search not added!');"><b>Go</b></button>
+          <input 
+            name="search" 
+            placeholder="What are you looking for?" 
+            type="text"> 
+          <button 
+            onclick="alert('Sorry, search not added!');">
+              <b>Go</b>
+          </button>
         </div>
         <!-- Links to other pages (only View All is functional) -->
-        <a href="shopping_cart.html"><img class="nav-cart" src=
-        "src/cart.png"></a>
+        <a href="shopping_cart.html">
+          <img 
+            class="nav-cart" 
+            src="src/cart.png">
+        </a>
+
         <div class='nav-right'>
           <ul>
             <li>
@@ -83,6 +87,7 @@ Note: F.S. Pillow is Flip Stitch Pillow
             </li>
 
             <li>
+              <!-- Size of the cart auto-updated when the cart is loaded -->
               <span id='cart_size'>0</span>
             </li>
           </ul>
