@@ -14,8 +14,8 @@ The shopping cart page for viewing products
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript">
     $(document).ready(function(){
-        Cart.load_cart();
-        Cart.render_cart_items();
+        Cart.loadCart();
+        Cart.renderCartItems();
     });
     </script>
 </head>
@@ -60,12 +60,14 @@ The shopping cart page for viewing products
 
     <div class="container-tight">
     	<div id="shopping_cart_items"></div>
+    	<br>
+    	<button class='checkout-button' onclick='alert(`Not yet!`)'>Checkout</button>
     </div>
     <br/>
   </body>
 
   <!-- Consistent footer -->
-  <footer>
+  <footer class='sticky'>
     <div class=left-text>(C) 2017</div>
     <div class="centered">Pittsburgh, PA</div>
     <div class="right-text">Flip Stitch Pillow, Inc.</span>
