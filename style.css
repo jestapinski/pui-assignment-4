@@ -18,6 +18,7 @@ Outlining style for elements in html pages
   --nav-height-offset: 2.5%;
   --dark-brown: #836852;
   --sand-brown: #BC8F6C;
+  --input-opaque: 0.6;
 }
 
 /* Define a calming background color for the site */
@@ -67,6 +68,7 @@ ul {
   border-radius: 8px;
   text-align: right;
   font-size: 14pt;
+  opacity: var(--input-opaque);
 }
 
 /* Styling the button on the search bar to be more consistent to UI */
@@ -175,7 +177,8 @@ footer {
 /* Add basic text formatting to the textarea element */
 textarea {
   font-family: var(--ff);
-  font-size: 14pt;  
+  font-size: 14pt;
+  opacity: var(--input-opaque);
 }
 
 /* Styling center text on the index page "Fall into Comfort" */
@@ -209,6 +212,15 @@ textarea {
   font-family: var(--ff);
   font-size: 24pt;
   color: black;
+}
+
+/* Styling the Featured Items Text on the index page */
+.callout-text-small {
+  font-family: var(--ff);
+  font-size: 20pt;
+  color: black;
+  margin-bottom: 2%;
+  margin-top: -2%;
 }
 
 /* Text formatting options for the customization options on the detail page */
@@ -382,7 +394,7 @@ https://www.w3schools.com/howto/howto_css_cards.asp
 
 /* Heading for the review text on the product detail page */
 .review-header {
-  margin-left: 28%; 
+  margin-left: 31%; 
   display: inline-block;
 }
 
@@ -430,8 +442,8 @@ textarea {
 
 /* Formatting options for the upper review stars on the product detail page */
 .large-stars {
-  width: 176px; 
-  height: 36px;
+  width: 140px; 
+  height: 29px;
 }
 
 /* Formatting options for the lower review stars on the product detail page */
@@ -449,6 +461,16 @@ textarea {
 .add-to-cart-button {
   width: 15%; 
   margin-left: 6%; 
+  margin-top: 2%;
+  font-family: var(--ff);
+  font-size: 14pt;
+  background-color: var(--sand-brown);
+  border-radius: 8px;
+}
+
+.add-to-wishlist-button {
+  width: 15%; 
+  margin-left: 2%; 
   margin-top: 2%;
   font-family: var(--ff);
   font-size: 14pt;
@@ -529,7 +551,7 @@ select {
 }
 
 .mid-padding {
-  padding-top: 5%;
+  padding-top: 2%;
 }
 
 .negative-padding {
@@ -585,9 +607,12 @@ hr {
 }
 
 .sticky {
-  position: absolute;
-  left: 0; 
-  right: 0; 
+  position: relative;
   bottom: 0;
   height: 2%;
+  margin-top: 2%;
+}
+
+.main-img {
+  opacity: 0.5;
 }

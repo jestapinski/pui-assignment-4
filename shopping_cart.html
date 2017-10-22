@@ -15,7 +15,7 @@ The shopping cart page for viewing products
       <script type="text/javascript" src="cart_render.js">
       </script>
   </head>
-  <body>
+  <body style="height: 100%; min-height: 100%;">
 
     <!-- 
     Rendering the Nav bar
@@ -75,7 +75,18 @@ The shopping cart page for viewing products
     	<!-- Shopping cart items field to be filled in with JS -->
     	<div id="shopping_cart_items"></div>
     	<br>
-    	<button class='checkout-button' onclick='alert(`Not yet!`)'>Checkout</button>
+      <button class='checkout-button' onclick='alert(`Not yet!`)'>Checkout</button>
+      <br>
+      <hr>
+    </div>
+
+    <!-- Move in from the outer window margins -->
+    <div class='container'>
+        <p class="callout-text"> Wishlist </p>     
+    </div>
+
+    <div class="container-tight">
+      <div id="wishlist-items"></div>
     </div>
     <br/>
 

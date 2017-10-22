@@ -14,6 +14,7 @@ The product detail page for the Bunny Bed Pillow item
     <script src="main.js" type="text/javascript">
     </script>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="snackbar.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="items_render.js">
     </script>
     <title>
@@ -106,33 +107,51 @@ The product detail page for the Bunny Bed Pillow item
       Bed pillows are Products with ids
       0, 4, 8, 12, 16, 20 
       -->
+
+<!-- Image borrowed from
+https://www.ruralking.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/k/i/kimlor_realtree_xtra_green_square_pillow_2.png
+ -->
       <img 
       class="selection-img" 
       onclick="Product.selectedProductChange(0);"
       src="src/SquareBedPillow.png">
 
+<!-- Image borrowed from
+https://images.lookhuman.com/render/standard/CshItnXAgufKBxuHQZGgLPiaBK4HYCV5/pillow14in-whi-z1-t-don-t-touch-me-cat.png 
+-->
       <img 
       class="selection-img-tight" 
       onclick="Product.selectedProductChange(4);" 
       src="src/CatBedPillow.png"> 
 
+<!-- Image borrowed from
+https://images.lookhuman.com/render/standard/2222583788022000/pillow14in-whi-z1-t-mosaic-pattern-bunny.png
+ -->
       <img 
       class="selection-img-tight" 
       onclick="Product.selectedProductChange(8);" 
       src="src/BunnyBedPillow.png">
 
       <br>
-      
+<!-- Image borrowed from
+https://cdn.shopify.com/s/files/1/1731/6873/products/LVyLXBKyWMnVLrgZndbXtfyLy6bAR5-front_2000x.png?v=1485331844
+ -->
       <img 
       class="selection-img" 
       onclick="Product.selectedProductChange(12);"
       src="src/DogBedPillow.png"> 
 
+<!-- Image borrowed from
+https://www.bfr.com/ams/images/products/pillow-pack/0053790-00-pillow-berry-round-648-432.png
+ -->
       <img 
       class="selection-img-tight" 
       onclick="Product.selectedProductChange(16);" 
       src="src/RoundBedPillow.png"> 
 
+<!-- Image adapted from
+https://cdn.shopify.com/s/files/1/1151/0394/products/pillow_grande.png?v=1475010394
+ -->
       <img 
       class="selection-img-tight" 
       onclick="Product.selectedProductChange(20);" 
@@ -169,19 +188,25 @@ The product detail page for the Bunny Bed Pillow item
           5
         </option>
       </select>
+      <br/>
       <button class="add-to-cart-button" onclick="Cart.addToCart()">
         Add to Cart
       </button>
+      <button class="add-to-wishlist-button" onclick="Wishlist.addToWishlist()">
+        Add to Wishlist
+      </button>
+      <div id="snackbar">Added to Cart!</div>
+      <div id="snackbar-wishlist">Added to Wishlist!</div>
 
     <!-- Add padding to sit description and reviews under 
       image and customization options -->
       <div class="mid-padding">
       </div>
       <!-- Description and Reviews text -->
-      <span class="callout-text">
+      <span class="callout-text-small">
         Description:
       </span> 
-      <span class="callout-text review-header">
+      <span class="callout-text-small review-header">
         Reviews:
       </span>
       <br>
