@@ -124,7 +124,6 @@ class Wishlist {
     let wishlistDiv = $('#wishlist-items')[0];
     for (let item in productsList){
       if (productsList[item].inWishlist) {
-        console.log(item);
         let newItem = $(Wishlist.productWishlistTemplate(productsList[item], item))[0];
         wishlistDiv.append(newItem);
       }
