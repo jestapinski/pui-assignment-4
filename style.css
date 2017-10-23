@@ -576,12 +576,16 @@ hr {
   width: 8%;
   float: left;
   margin-right: 3%;
+  background-color: var(--sand-brown);
+  border-radius: 8px;
 }
 
 .checkout-button {
   text-align: center;
   width: 10%;
   margin-top: 0;
+  border-radius: 8px;
+  background-color: white
 }
 
 /* The price of an item displayed on the index screen */

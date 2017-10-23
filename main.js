@@ -69,7 +69,8 @@ class Cart {
     for (let item in cart) {
       totalPrice += (cart[item].quantity * cart[item].unitPrice);
     }
-    return totalPrice;
+    // Avoiding floating point addition error
+    return Math.round(totalPrice * 100) / 100;
   }
 
   // Append formatted template for each item in the cart
@@ -164,12 +165,13 @@ class Wishlist {
 // encapsulating static product-based functions
 class Product {
   // Products have a name, price, quantity in cart, and image
-  constructor(name, unitPrice, imageLink) {
+  constructor(name, unitPrice, imageLink, description) {
     this.name = name;
     this.unitPrice = unitPrice;
     this.quantity = 0;
     this.inWishlist = false;
     this.imageLink = imageLink;
+    this.description = description;
   }
 
   // Change the displayed product on the product detail page
@@ -179,7 +181,9 @@ class Product {
     let itemText = document.getElementById('item_text');
     let priceText = document.getElementById('price_text');
     let selectedImg = document.getElementById('selected_img');
+    let prodDescription = document.getElementById('prod-description');
     itemText.innerHTML = productsList[itemNum].name;
+    prodDescription.innerHTML = productsList[itemNum].description;
     priceText.innerHTML = '$'.concat(
       productsList[itemNum].unitPrice.toString());
     // Change the source image to be the selected product's
@@ -221,11 +225,18 @@ class Product {
     localStorage.setItem('productsList', JSON.stringify(productsList));
   }
 
+  static descriptionTemplate(item){
+    return `
+      An amazing 0. Did you know that this 0 is the best we have? 
+      Neither did I. The pillow is comfortable too. <br>Features:<br>
+      - One 0 
+    `.replace(/0/g, item);
+  }
+
   // Initialize the entire list of products with properties
   static initializeProducts() {
     this.loadProducts();
     if (productsList !== null){
-      console.log("loaded");
       return;
     }
     let categories = ['Bed', 'Couch', 'Floor Pouf', 'Round'];
@@ -252,14 +263,18 @@ class Product {
       return 'src/'.concat(x, '.png');
     });
     // Rotate through some prices for the products
-    let priceArray = [14.99, 19.99, 24.99];
     productsList = [];
     for (let i = 0; i < allCategories.length; i++) {
       productsList.push(new Product(allCategories[i],
-        priceArray[i % priceArray.length], filepathNames[i]));
+        i + 0.99, filepathNames[i],
+        this.descriptionTemplate(allCategories[i])));
     }
   }
 }
+
+let descriptions = ["", 
+  "A delightful bunny pillow.", "A doggo pillow. 'Nuff said.", 
+  "A perfectly rounded pillow.", "Create your own pillow."]
 
 // On loading the page, load the cart and initialize
 // the array of products
