@@ -16,13 +16,14 @@ class Cart {
   // Add the selected item to Cart
   static addToCart() {
     this.loadCart();
-
     // Below snackbar code borrowed from https://www.w3schools.com/howto/howto_js_snackbar.asp 
     // Get the snackbar DIV
-    var x = document.getElementById("snackbar")
-    x.className = "show";
+    var snackbar = document.getElementById("snackbar")
+    snackbar.className = "show";
     // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function() { 
+      snackbar.className = snackbar.className.replace("show", ""); 
+    }, 3000);
 
     let selectQuantity = document.getElementById('quantity');
     let quantity = parseInt(selectQuantity.value);
@@ -59,7 +60,7 @@ class Cart {
     for (let item in cart) {
       totalItems += cart[item].quantity;
     }
-    let numInCart = document.getElementById('cart_size');
+    let numInCart = document.getElementById('cart-size');
     numInCart.innerHTML = totalItems;
   }
 
@@ -76,8 +77,8 @@ class Cart {
   // Append formatted template for each item in the cart
   static renderCartItems() {
     // Clear the div as-is before appending items
-    $('#shopping_cart_items').html('');
-    let cartListDiv = $('#shopping_cart_items')[0];
+    $('#shopping-cart-items').html('');
+    let cartListDiv = $('#shopping-cart-items')[0];
     for (let item in cart) {
       // Format the item according to a cart item template and append
       let newItem = $(Product.productCartTemplate(item))[0];
@@ -107,6 +108,8 @@ class Cart {
 }
 
 class Wishlist {
+  // Find the parent of the item we are looking to remove
+  // and remove it from the wishlist
   static removeParentFromWishlist(item) {
     let itemToDelete = item.parentNode.id;
     productsList[itemToDelete].inWishlist = false;
@@ -114,6 +117,8 @@ class Wishlist {
     this.renderWishlist();    
   }
 
+  // Render the wish list items dynamically by
+  // incrementally populating a div
   static renderWishlist() {
     $('#wishlist-items').html('');
     let wishlistDiv = $('#wishlist-items')[0];
@@ -126,20 +131,25 @@ class Wishlist {
     }
   }
 
+  // Add a product to the wish list
   static addToWishlist() {
     // Below snackbar code borrowed from https://www.w3schools.com/howto/howto_js_snackbar.asp 
-    // Get the snackbar DIV
-    var x = document.getElementById("snackbar-wishlist")
-    x.className = "show";
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    var snackbar = document.getElementById("snackbar-wishlist")
+    snackbar.className = "show";
+    // After 3 seconds, remove the show class from the snackbar
+    setTimeout(function() { 
+      snackbar.className = snackbar.className.replace("show", ""); 
+    }, 3000);
+    // Add the selected product to the wishlist and save
     selectedProduct.inWishlist = true;
     Product.saveProducts();
   }
 
+  // A general template for displaying items on the
+  // wish list on the shopping cart page.
   static productWishlistTemplate(item, num) {
     let template = `
-    <div class='cart_item' id='{3}'>
+    <div class='cart-item' id='{3}'>
       <img src='{2}' class='cart-img'/>
       <p class='checkout-customize-text'>{0}</p>
       <p class='checkout-price-text'>\${4} each</p>
@@ -178,9 +188,9 @@ class Product {
   // to be the selected product
   static selectedProductChange(itemNum) {
     selectedProduct = productsList[itemNum];
-    let itemText = document.getElementById('item_text');
-    let priceText = document.getElementById('price_text');
-    let selectedImg = document.getElementById('selected_img');
+    let itemText = document.getElementById('item-text');
+    let priceText = document.getElementById('price-text');
+    let selectedImg = document.getElementById('selected-img');
     let prodDescription = document.getElementById('prod-description');
     itemText.innerHTML = productsList[itemNum].name;
     prodDescription.innerHTML = productsList[itemNum].description;
@@ -194,7 +204,7 @@ class Product {
   // the cart.
   static productCartTemplate(item) {
     let template = `
-    <div class='cart_item' id='{3}'>
+    <div class='cart-item' id='{3}'>
       <img src='{2}' class='cart-img'/>
       <p class='checkout-customize-text'>{0}</p>
       <p class='checkout-price-text'>\${4} each</p>
@@ -225,12 +235,14 @@ class Product {
     localStorage.setItem('productsList', JSON.stringify(productsList));
   }
 
+  // A general description demplate to update based on an item's name.
   static descriptionTemplate(item){
     return `
       An amazing 0. Did you know that this 0 is the best we have? 
       Neither did I. The pillow is comfortable too. <br>Features:<br>
       - One 0 
     `.replace(/0/g, item);
+    // Replace globally based on a regular expression
   }
 
   // Initialize the entire list of products with properties
@@ -240,6 +252,7 @@ class Product {
       return;
     }
     let categories = ['Bed', 'Couch', 'Floor Pouf', 'Round'];
+
     // <Category> Pillow
     categories = categories.map(function(x) {
       return x.concat(' Pillow');
@@ -251,6 +264,7 @@ class Product {
         return x.concat(' ', y);
       });
     });
+
     // Flatten the list of pillow categories into one dimension
     allCategories = [].concat.apply([], allCategories);
     let filepathNames = allCategories.map(function(x) {
@@ -258,23 +272,22 @@ class Product {
       // and is a .png file
       return x.split(' ').join('');
     });
+
     // Map the filename to the folder it is in and the extension
     filepathNames = filepathNames.map(function(x) {
       return 'src/'.concat(x, '.png');
     });
-    // Rotate through some prices for the products
+
     productsList = [];
     for (let i = 0; i < allCategories.length; i++) {
+      // Note i + 0.99 is used to generate unique prices for
+      // each product in the list
       productsList.push(new Product(allCategories[i],
         i + 0.99, filepathNames[i],
         this.descriptionTemplate(allCategories[i])));
     }
   }
 }
-
-let descriptions = ["", 
-  "A delightful bunny pillow.", "A doggo pillow. 'Nuff said.", 
-  "A perfectly rounded pillow.", "Create your own pillow."]
 
 // On loading the page, load the cart and initialize
 // the array of products

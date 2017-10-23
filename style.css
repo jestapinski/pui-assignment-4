@@ -541,7 +541,7 @@ select {
   padding-left: 15px;
 }
 
-#cart_size {
+#cart-size {
   font-family: var(--ff);
   font-size: 14pt;
 }
